@@ -31,12 +31,9 @@ try:
     charging_status = driver.find_element_by_xpath('//*[@id="batterystatus"]')
 
     if(int(battery_level.text[0:2]) <= 20 and charging_status.text == 'Discharging'):
-        print('Battery Low')
         notify(title    = 'Battery Low',
                subtitle = '',
                message  = 'Please charge your JioFi')
-    else:
-        print('OK!')
 except:
     exit()
 
