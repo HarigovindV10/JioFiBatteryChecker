@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.7/bin python3
+#!/usr/local/bin python
 
 from selenium import webdriver
 import time
