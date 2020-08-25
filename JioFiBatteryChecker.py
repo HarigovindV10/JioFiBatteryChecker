@@ -8,6 +8,7 @@ from pync import Notifier
 
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
+options.add_argument('log-level=3')
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options = options)
 
@@ -36,7 +37,7 @@ try:
                         subtitle = f'{battery_level.text} remaining ',
                         sound = 'Ping',
                         appIcon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Reliance_Jio_Logo_%28October_2015%29.svg/1200px-Reliance_Jio_Logo_%28October_2015%29.svg.png')
-    if(int(battery_level.text[0:2]) == 20 and charging_status.text == 'Charging'):
+    if(int(battery_level.text[0:2]) == 100 and charging_status.text == 'Charging'):
         Notifier.notify('Please unplug your JioFI Charger',
                         title = 'Battery Full',
                         subtitle = f'{battery_level.text} remaining ',
